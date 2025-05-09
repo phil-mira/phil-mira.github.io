@@ -11,6 +11,7 @@ github_username:  yourusername
 linkedin_username: yourusername
 google_scholar_id: yourid
 orcid_id: your-orcid-id
+theme: jekyll-theme-minimal
 
 # Build settings
 markdown: kramdown
