@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Monitoring Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reuse styles from index.html */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .project-hero {
+            background-color: var(--light-bg);
+            padding: 100px 0 50px;
+            text-align: center;
+        }
+
+        .project-hero video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .project-hero h1 {
+            font-size: 36px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .project-hero p {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .project-content {
+            padding: 50px 0;
+        }
+
+        .project-content h2 {
+            font-size: 28px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .project-content p {
+            font-size: 16px;
+            color: var(--text-color);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Phil Miranthis</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#research">Research</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+        <div class="container">
+            <div id="media-carousel" style="width:100%;overflow:hidden;display:flex;justify-content:center;align-items:center;position:relative;">
+                <div id="media-content"></div>
+                <button id="next-btn" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:rgba(44,62,80,0.7);border:none;color:white;font-size:rem;border-radius:80%;width:50px;height:60px;cursor:pointer;">&#9654;</button>
+            </div>
+            <h1>Exercise Monitoring with Inertial Sensors</h1>
+            <p>A project focused on using machine learning to monitor exercise activities through wearable sensors.</p>
+        </div>
+    </section>
+    <script>
+    const mediaList = [
+        { type: "video", src: "car.mp4" },
+        { type: "image", src: "project-image-placeholder.jpg" },
+        // Add more media objects as needed
+    ];
+    let currentIndex = 0;
+
+    function showMedia(index) {
+        const media = mediaList[index];
+        const container = document.getElementById('media-content');
+        if (media.type === "video") {
+            container.innerHTML = `<video src="${media.src}" autoplay loop muted playsinline style="width:80vw;max-width:none;height:auto;object-fit:cover;aspect-ratio:9/9;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.1);margin-bottom:20px;"></video>`;
+        } else if (media.type === "image") {
+            container.innerHTML = `<img src="${media.src}" alt="Project Media" style="width:80vw;max-width:none;height:auto;object-fit:cover;aspect-ratio:9/9;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.1);margin-bottom:20px;">`;
+        }
+    }
+
+    document.getElementById('next-btn').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % mediaList.length;
+        showMedia(currentIndex);
+    });
+
+    // Initialize carousel
+    showMedia(currentIndex);
+    </script>
+
+    <!-- Project Content Section -->
+    <section class="project-content">
+        <div class="container">
+            <h2>Project Overview</h2>
+            <p>
+                This project explores the use of machine learning algorithms to analyze data from a network of wearable inertial sensors.
+                The goal was to accurately monitor and classify various exercise activities, providing real-time feedback to users.
+            </p>
+            <h2>Key Contributions</h2>
+            <p>
+                - Developed a machine learning pipeline for processing sensor data.<br>
+                - Designed and implemented a feature extraction method to improve classification accuracy.<br>
+                - Conducted extensive testing and validation using real-world datasets.
+            </p>
+            <h2>Technologies Used</h2>
+            <p>
+                - Python, TensorFlow, and Scikit-learn for machine learning.<br>
+                - MATLAB for signal processing.<br>
+                - Wearable sensor hardware for data collection.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Philippe Miranthis. All rights reserved.</p>
+            <a href="index.html">Back to Home</a>
+        </div>
+    </footer>
+</body>
+</html>
