@@ -164,14 +164,14 @@
                 <div id="media-content"></div>
                 <button id="next-btn" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:rgba(44,62,80,0.7);border:none;color:white;font-size:rem;border-radius:80%;width:50px;height:60px;cursor:pointer;">&#9654;</button>
             </div>
-            <h1>Exercise Monitoring with Inertial Sensors</h1>
-            <p>A project focused on using machine learning to monitor exercise activities through wearable sensors.</p>
+            <h1>MPC Controller for Autonmous Race Car</h1>
+            
         </div>
     </section>
     <script>
     const mediaList = [
         { type: "video", src: "car.mp4" },
-        { type: "image", src: "project-image-placeholder.jpg" },
+        { type: "image", src: "tbre.webp" },
         // Add more media objects as needed
     ];
     let currentIndex = 0;
@@ -200,20 +200,28 @@
         <div class="container">
             <h2>Project Overview</h2>
             <p>
-                This project explores the use of machine learning algorithms to analyze data from a network of wearable inertial sensors.
-                The goal was to accurately monitor and classify various exercise activities, providing real-time feedback to users.
+                This project was part of the 2022 University of Bath Team Bath Racing Electric effort for the AI 
+                driverless car class. I led the control side of the team developing a model predictive controller 
+                that used data from the localization and perception modules to determine the route for the car to take.
+                The team competed in the automated driving system class, where each car had to be built and developed by 
+                the team, requiring significant effort towards integration of all the sensors and actuators required to 
+                control the vehicle. A video showing the matlab simulation of the car around a simulated course can be
+                seen above. 
             </p>
-            <h2>Key Contributions</h2>
-            <p>
-                - Developed a machine learning pipeline for processing sensor data.<br>
-                - Designed and implemented a feature extraction method to improve classification accuracy.<br>
-                - Conducted extensive testing and validation using real-world datasets.
+
+            
             </p>
-            <h2>Technologies Used</h2>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <h2>Further Reading</h2>
             <p>
-                - Python, TensorFlow, and Scikit-learn for machine learning.<br>
-                - MATLAB for signal processing.<br>
-                - Wearable sensor hardware for data collection.
+                For more details, you can read the full report here:
+                <a href="mpc-report.pdf" target="_blank" style="color: var(--primary-color); text-decoration: underline;">
+                    Model Predictive Control for Autonmous Race Car (PDF)
+                </a>
             </p>
         </div>
     </section>

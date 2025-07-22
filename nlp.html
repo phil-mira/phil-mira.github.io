@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Monitoring Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reuse styles from index.html */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .project-hero {
+            background-color: var(--light-bg);
+            padding: 100px 0 50px;
+            text-align: center;
+        }
+
+        .project-hero img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .project-hero h1 {
+            font-size: 36px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .project-hero p {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .project-content {
+            padding: 50px 0;
+        }
+
+        .project-content h2 {
+            font-size: 28px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .project-content p {
+            font-size: 16px;
+            color: var(--text-color);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Phil Miranthis</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#research">Research</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+        <div class="container">
+            <h1>Preference modelling of language models for age-appropriate responses to questions in K-12 environments</h1>
+            <img src="questions.png" alt="Project Image">
+        </div>
+    </section>
+
+    <!-- Project Content Section -->
+    <section class="project-content">
+        <div class="container">
+            <h2>abstract</h2>
+            <p>
+                Current large language models have shown an inability
+to provide age-appropriate answers to students across the K-
+12 spectrum when provided with limited context on the student.
+This has consequences for potential applications within
+the education sector, where these technologies may look to
+be used as chatbots to assist with learning to help alleviate
+stressors in the industry. This report has tried to address this
+limitation by using Direct Preference Optimisation preference
+modelling to fine-tune two model architectures on a novel
+dataset of preference pairs. The dataset contains questions
+with added context of the students’ grades from the K-12
+range and has been evaluated by an independent teacher for
+suitability. The optimised models showed a significant improvement
+in providing age-appropriate responses when assessed
+by a separate primary school independent teacher and a
+graduate student. The study highlighted difficulties for learning
+age-appropriate answers to questions by students in middle
+school and linked the difficulties to a lack of understanding
+of the exact knowledge level of the student. The models
+have also been benchmarked against the untrained model
+on common problem-solving benchmarks. Optimised models
+were shown to perform on par with the base model, demonstrating
+that improvements in age-appropriate responses do
+not sacrifice the models’ problem-solving capabilities. 
+            
+            </p>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <h2>Further Reading</h2>
+            <p>
+                For more details, you can read the full report here:
+                <a href="nlp.pdf" target="_blank" style="color: var(--primary-color); text-decoration: underline;">
+                    Preference modelling of language models for age-appropriate responses to questions in K-12 environments (PDF)
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Philippe Miranthis. All rights reserved.</p>
+            <a href="index.html">Back to Home</a>
+        </div>
+    </footer>
+</body>
+</html>
