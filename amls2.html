@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melanoma Classification</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reuse styles from index.html */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .project-hero {
+            background-color: var(--light-bg);
+            padding: 100px 0 50px;
+            text-align: center;
+        }
+
+        .project-hero img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .project-hero h1 {
+            font-size: 36px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .project-hero p {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .project-content {
+            padding: 50px 0;
+        }
+
+        .project-content h2 {
+            font-size: 28px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .project-content p {
+            font-size: 16px;
+            color: var(--text-color);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Phil Miranthis</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#research">Research</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+        <div class="container">
+            <h1>Melanoma classification for SIIM-ISIC Kaggle competition</h1>
+            <img src="Melanomas.png" alt="Project Image">
+        </div>
+    </section>
+
+    <!-- Project Content Section -->
+    <section class="project-content">
+        <div class="container">
+            <h2>Abstract</h2>
+            <p>
+                This research explores resource-efficient approaches
+to melanoma classification from dermoscopic images, addressing
+the challenge of operating under computational
+constraints in the context of the SIIM-ISIC 2020 competition.
+While top-performing submissions typically employ
+ensemble methods with multiple models trained on extensive
+datasets over several days using powerful GPU clusters,
+we demonstrate that competitive performance can be
+achieved with significantly fewer resources through strategic
+data sampling and model selection. Our approach focuses on
+constructing a smaller, high-quality dataset of 3,987 images
+(compared to the original 33,126) by maintaining diversity
+across patients while preserving all melanoma cases, which
+resulted in a model that achieved a ROC-AUC of 0.845 on the
+competition test data. This represents a substantial efficiency
+improvement, reducing training time from hours to minutes
+while maintaining performance comparable to models
+trained on the full dataset. We also investigated specialized
+models based on sex and image brightness characteristics,
+though these underperformed due to insufficient data for
+separate feature extractors. Our findings suggest that in medical
+imaging applications with highly imbalanced datasets,
+thoughtful dataset construction can be more valuable than
+raw data volume, making accurate melanoma detection more
+accessible in resource-limited healthcare environments. This
+work contributes to the broader effort of developing efficient
+AI solutions for medical applications where computational
+resources may be limited but diagnostic accuracy remains
+critical. 
+            
+            </p>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <h2>Further Reading</h2>
+            <p>
+                For more details, you can read the full report here:
+                <a href="amls2.html" target="_blank" style="color: var(--primary-color); text-decoration: underline;">
+                    Melanoma classification for SIIM-ISIC Kaggle competition (PDF)
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Philippe Miranthis. All rights reserved.</p>
+            <a href="index.html">Back to Home</a>
+        </div>
+    </footer>
+</body>
+</html>

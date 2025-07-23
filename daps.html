@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S&P</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reuse styles from index.html */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .project-hero {
+            background-color: var(--light-bg);
+            padding: 100px 0 50px;
+            text-align: center;
+        }
+
+        .project-hero img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .project-hero h1 {
+            font-size: 36px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .project-hero p {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .project-content {
+            padding: 50px 0;
+        }
+
+        .project-content h2 {
+            font-size: 28px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .project-content p {
+            font-size: 16px;
+            color: var(--text-color);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Phil Miranthis</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#research">Research</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+        <div class="container">
+            <h1>Forecasting the S&P 500</h1>
+            <img src="daps.png" alt="Project Image">
+        </div>
+    </section>
+
+    <!-- Project Content Section -->
+    <section class="project-content">
+        <div class="container">
+            <h2>Abstract</h2>
+            <p>
+                This study explores the challenges and opportunities in forecasting the S&P 500, a benchmark
+index often used as a barometer of U.S. economic health. By leveraging seven years of
+historical data (2017–2024) and incorporating diverse features such as economic indicators,
+news sentiment, and holidays, the study aims to predict the index’s movement over a twomonth
+horizon. Using the Prophet model, a scalable time-series forecasting tool, the analysis
+evaluates the predictive power of various data combinations, including baseline market data,
+economic indices, and sentiment analysis. Results indicate that while the inclusion of multiple
+data sources improves general trend prediction, pinpointing precise market movements
+remains elusive, constrained by market noise and inefficiencies. This study highlights the
+potential of combining diverse datasets for directional market predictions, while emphasizing
+the limitations of existing models in achieving actionable accuracy. Future work could
+enhance predictions through refined datasets and advanced machine learning techniques.
+            
+            </p>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <h2>Further Reading</h2>
+            <p>
+                For more details, you can read the full report here:
+                <a href="daps.pdf" target="_blank" style="color: var(--primary-color); text-decoration: underline;">
+                    Forecasting the S&P 500 (PDF)
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Philippe Miranthis. All rights reserved.</p>
+            <a href="index.html">Back to Home</a>
+        </div>
+    </footer>
+</body>
+</html>
